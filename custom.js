@@ -12,19 +12,19 @@ function fonctionRequeteApi(url, elementID) {
 }
 	
 function homePageLoading() {
-    url = 'http://bitcoin.mubiz.com/info';
+    url = 'https://bitcoin.mubiz.com/info';
     elementID = 'info';
     fonctionRequeteApi(url, elementID);
 		
-    url = 'http://bitcoin.mubiz.com/blockchaininfo';
+    url = 'https://bitcoin.mubiz.com/blockchaininfo';
     elementID = 'blockchaininfo';
     fonctionRequeteApi(url, elementID);
 		
-    url = 'http://bitcoin.mubiz.com/mininginfo';
+    url = 'https://bitcoin.mubiz.com/mininginfo';
     elementID = 'mininginfo';
     fonctionRequeteApi(url, elementID);
 		
-    url = 'http://bitcoin.mubiz.com/peerinfo';
+    url = 'https://bitcoin.mubiz.com/peerinfo';
     elementID = 'peerinfo';
     fonctionRequeteApi(url, elementID);
 }

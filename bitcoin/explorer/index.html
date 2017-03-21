@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Ingénieurie financière - Blockchain - TD2</title>
+		
+		<!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		<script src="../custom.js"></script>
+	</head>
+		
+	<body>
+	
+		<form class="form-horizontal">
+		<fieldset>
+
+		<!-- Form Name -->
+		<legend>Form Name</legend>
+
+		<!-- Text input-->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="address">Adresse</label>  
+			<div class="col-md-4">
+			<input id="address" name="address" placeholder="" class="form-control input-md" type="text">
+			<span class="help-block">Saisir une adresse</span>  
+			</div>
+		</div>
+
+		<!-- Text input-->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="transaction">Transaction</label>  
+			<div class="col-md-4">
+			<input id="transaction" name="transaction" placeholder="" class="form-control input-md" type="text">
+			<span class="help-block">Saisir un hash de transaction</span>  
+			</div>
+		</div>
+
+		<!-- Text input-->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="bloc">Bloc</label>  
+			<div class="col-md-4">
+			<input id="bloc" name="bloc" placeholder="" class="form-control input-md" type="text">
+			<span class="help-block">Saisir un hash de bloc</span>  
+			</div>
+		</div>
+
+		<!-- Text input-->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="index">Index</label>  
+			<div class="col-md-4">
+			<input id="index" name="index" placeholder="" class="form-control input-md" type="text">
+			<span class="help-block">Saisir l'index d'un bloc</span>  
+			</div>
+		</div>
+
+		<!-- Button -->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="submitbutton"></label>
+			<div class="col-md-4">
+				<button id="submitbutton" name="submitbutton" class="btn btn-primary">Envoyer</button>
+			</div>
+		</div>
+
+		</fieldset>
+		</form>
+		
+	</body>
+	
+	<!-- Script javascript -->
+	<script type="text/javascript">		
+		function controldata() {
+			//Adresse : alphanumérique , taille 34
+			var address = document.getElementById("address").value;
+			var isAddress = /^[0-9a-zA-Z]{34}$/.test(address);
+			//Hash de transaction : hexadecimal , taille 64
+			var transaction = document.getElementById("transaction").value;
+			var isTransaction = /^[0-9a-zA-Z]{64}$/.test(transaction);
+			//Hash de bloc : hexadecimal , taille 64
+			var bloc = document.getElementById("bloc").value;
+			var isBloc = /^[0-9a-zA-Z]{64}$/.test(bloc);
+			//Index : numerique
+			var index = document.getElementById("index").value;
+			var isIndex = /^[0-9]+$/.test(index);
+		}
+		document.getElementById("submitbutton").addEventListener("click", controldata);
+	</script>
+</html>
