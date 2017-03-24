@@ -114,22 +114,19 @@
 		var error_elementID = 'error_message';
 		
 		// *********** CONTROL DATA ***********
-		function controldata_address() {
+		function controldata_address(value_input) {
 			//Adresse : alphanumérique , taille 34
-			var address = document.getElementById("address").value;
-			var isAddress = /^[0-9a-zA-Z]{34}$/.test(address);
+			var isAddress = /^[0-9a-zA-Z]{34}$/.test(value_input);
 			return isAddress;
 		}
-		function controldata_transaction() {
+		function controldata_transaction(value_input) {
 			//Hash de transaction : hexadecimal , taille 64
-			var transaction = document.getElementById("transaction").value;
-			var isTransaction = /^[0-9a-zA-Z]{64}$/.test(transaction);
+			var isTransaction = /^[0-9a-zA-Z]{64}$/.test(value_input);
 			return isTransaction;
 		}
-		function controldata_bloc() {
+		function controldata_bloc(value_input) {
 			//Hash de bloc : hexadecimal , taille 64
-			var bloc = document.getElementById("bloc").value;
-			var isBloc = /^[0-9a-zA-Z]{64}$/.test(bloc);
+			var isBloc = /^[0-9a-zA-Z]{64}$/.test(value_input);
 			return isBloc;
 		}
 		function controldata_index(value_input) {
