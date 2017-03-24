@@ -10,82 +10,186 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		
-		<script src="../custom.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../style.css">
+		
+		<script src="../../custom.js"></script>
 	</head>
 		
 	<body>
-	
-		<form class="form-horizontal">
-		<fieldset>
+		<div class="col-lg-6 col-md-6 col-xs-12">
+			<form class="form-horizontal">
+			<fieldset>
 
-		<!-- Form Name -->
-		<legend>Form Name</legend>
+			<!-- Form Name -->
+			<legend>Explorer</legend>
 
-		<!-- Text input-->
-		<div class="form-group">
-			<label class="col-md-4 control-label" for="address">Adresse</label>  
-			<div class="col-md-4">
-			<input id="address" name="address" placeholder="" class="form-control input-md" type="text">
-			<span class="help-block">Saisir une adresse</span>  
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-2 control-label" for="address">Adresse</label>  
+				<div class="col-md-6">
+				<input id="address" name="address" placeholder="" class="form-control input-md" type="text" value="17LHaecYMc9682FSG911f2Vk574NmUKUWR">
+				<span class="help-block">Saisir une adresse</span>  
+				</div>
+				<div class="col-md-4 pull-right">
+					<a id="submitaddress" name="submitaddress" class="btn btn-primary">Envoyer</a>
+				</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-2 control-label" for="transaction">Transaction</label>  
+				<div class="col-md-6">
+				<input id="transaction" name="transaction" placeholder="" class="form-control input-md" type="text" value="b6f6991d03df0e2e04dafffcd6bc418aac66049e2cd74b80f14ac86db1e3f0da">
+				<span class="help-block">Saisir un hash de transaction</span>  
+				</div>
+				<div class="col-md-4 pull-right">
+					<a id="submittransaction" name="submittransaction" class="btn btn-primary">Envoyer</a>
+				</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-2 control-label" for="bloc">Bloc</label>  
+				<div class="col-md-6">
+				<input id="bloc" name="bloc" placeholder="" class="form-control input-md" type="text" value="000000001645e44d850069225bb5141254859b095500a0f98894b0fe3a6ca1ac">
+				<span class="help-block">Saisir un hash de bloc</span>  
+				</div>
+				<div class="col-md-4 pull-right">
+					<a id="submitbloc" name="submitbloc" class="btn btn-primary">Envoyer</a>
+				</div>
+			</div>
+			
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-2 control-label" for="index">Index</label>  
+				<div class="col-md-6">
+				<input id="index" name="index" placeholder="" class="form-control input-md" type="text" value="40015">
+				<span class="help-block">Saisir l'index d'un bloc</span>  
+				</div>
+				<div class="col-md-4 pull-right">
+					<a id="submitindex" name="submitindex" class="btn btn-primary">Envoyer</a>
+				</div>
+			</div>
+
+			</fieldset>
+			</form>
+		</div>
+		
+		<div class="col-lg-6 col-md-6 col-xs-12">
+			<div class="row">
+				<div class="col-lg-12 col-xs-6">
+						<pre>
+								<code id="result"></code>
+						</pre>
+				</div>
 			</div>
 		</div>
+		
 
-		<!-- Text input-->
-		<div class="form-group">
-			<label class="col-md-4 control-label" for="transaction">Transaction</label>  
-			<div class="col-md-4">
-			<input id="transaction" name="transaction" placeholder="" class="form-control input-md" type="text">
-			<span class="help-block">Saisir un hash de transaction</span>  
+		<!-- Modal -->
+		<div class="modal fade" id="modal_error" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">Erreur de saisie !</h4>
+					</div>
+					<div class="modal-body">
+						<p id="error_message">
+						</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+					</div>
+				</div>
 			</div>
 		</div>
-
-		<!-- Text input-->
-		<div class="form-group">
-			<label class="col-md-4 control-label" for="bloc">Bloc</label>  
-			<div class="col-md-4">
-			<input id="bloc" name="bloc" placeholder="" class="form-control input-md" type="text">
-			<span class="help-block">Saisir un hash de bloc</span>  
-			</div>
-		</div>
-
-		<!-- Text input-->
-		<div class="form-group">
-			<label class="col-md-4 control-label" for="index">Index</label>  
-			<div class="col-md-4">
-			<input id="index" name="index" placeholder="" class="form-control input-md" type="text">
-			<span class="help-block">Saisir l'index d'un bloc</span>  
-			</div>
-		</div>
-
-		<!-- Button -->
-		<div class="form-group">
-			<label class="col-md-4 control-label" for="submitbutton"></label>
-			<div class="col-md-4">
-				<button id="submitbutton" name="submitbutton" class="btn btn-primary">Envoyer</button>
-			</div>
-		</div>
-
-		</fieldset>
-		</form>
 		
 	</body>
 	
 	<!-- Script javascript -->
-	<script type="text/javascript">		
-		function controldata() {
+	<script type="text/javascript">	
+		// *********** VARIABLES ***********
+		var result_elementID = 'result';
+		var error_elementID = 'error_message';
+		
+		// *********** CONTROL DATA ***********
+		function controldata_address() {
 			//Adresse : alphanumérique , taille 34
 			var address = document.getElementById("address").value;
 			var isAddress = /^[0-9a-zA-Z]{34}$/.test(address);
+			return isAddress;
+		}
+		function controldata_transaction() {
 			//Hash de transaction : hexadecimal , taille 64
 			var transaction = document.getElementById("transaction").value;
 			var isTransaction = /^[0-9a-zA-Z]{64}$/.test(transaction);
+			return isTransaction;
+		}
+		function controldata_bloc() {
 			//Hash de bloc : hexadecimal , taille 64
 			var bloc = document.getElementById("bloc").value;
 			var isBloc = /^[0-9a-zA-Z]{64}$/.test(bloc);
-			//Index : numerique
-			var index = document.getElementById("index").value;
-			var isIndex = /^[0-9]+$/.test(index);
+			return isBloc;
 		}
-		document.getElementById("submitbutton").addEventListener("click", controldata);
+		function controldata_index(value_input) {
+			//Index : numerique
+			var isIndex = /^[0-9]+$/.test(value_input);
+			return isIndex;
+		}
+		
+		// *********** HANDLER ***********
+		function handler_address() {
+			var address = document.getElementById("address").value;
+			if(controldata_address(address)){
+				url = ' https://bitcoin.mubiz.com/address/' + address + '/';
+				fonctionRequeteApi(url, result_elementID);
+			} else {
+				// Affichage pop-up error
+				document.getElementById( error_elementID ).innerHTML = "L'adresse que vous venez de renseigner est incorrect. Une adresse doit être de type alphanumérique et doit être de longueur 34 caractères.";
+				$('#modal_error').modal();
+			}
+		}
+		
+		function handler_transaction() {
+			var transaction = document.getElementById("transaction").value;
+			if(controldata_transaction(transaction)){
+				url = 'https://api.blockcypher.com/v1/btc/main/txs/' + transaction;
+				//url = 'https://blockchain.info/fr/rawtx/' + transaction ;
+				fonctionRequeteApi(url, result_elementID);
+			} else {
+				// Affichage pop-up error
+				document.getElementById( error_elementID ).innerHTML = "Le hash de transaction que vous venez de renseigner est incorrect. Un hash de transaction doit être de type hexadécimal et doit être de longueur 64 caractères.";
+				$('#modal_error').modal();
+			}
+		}
+		
+		function handler_bloc() {
+			var bloc = document.getElementById("bloc").value;
+			if(controldata_bloc(bloc)){
+				url = 'https://bitcoin.mubiz.com/block_hash/' + bloc + '/';
+				fonctionRequeteApi(url, result_elementID);
+			} else {
+				// Affichage pop-up error
+				document.getElementById( error_elementID ).innerHTML = "Le hash de bloc que vous venez de renseigner est incorrect. Un hash de bloc doit être de type hexadécimal et doit être de longueur 64 caractères.";
+				$('#modal_error').modal();
+			}
+		}
+		
+		function handler_index() {
+			var index = document.getElementById("index").value;
+			if(controldata_index(index)){
+				url = 'https://bitcoin.mubiz.com/block_index/' + index + '/';
+				fonctionRequeteApi(url, result_elementID);
+			} else {
+				// Affichage pop-up error
+				document.getElementById( error_elementID ).innerHTML = "L'index que vous venez de renseigner est incorrect. Un index doit être de type numérique.";
+				$('#modal_error').modal();
+			}
+		}
+		document.getElementById("submitaddress").addEventListener("click", handler_address);
+		document.getElementById("submittransaction").addEventListener("click", handler_transaction);
+		document.getElementById("submitbloc").addEventListener("click", handler_bloc);
+		document.getElementById("submitindex").addEventListener("click", handler_index);
 	</script>
 </html>
